@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDoList</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id="app">
-        <h1>ToDoList</h1>
+    <nav>
+        <a class="navbar-brand" href="/">
+            <div class="logo-image">
+                <img src="logo" class="img-fluid">
+            </div>
+        </a>
+    </nav>
+    <div class="container">
+        <div class="inner-container">
+            <div id="app">
 
-        <div v-if="!isEditing">
-            <input type="text" v-model="todo">
-            <input type="submit" value="Add" @click="storeTodo">
+                <p class="tam-head-primary-l">Takenlijst</p>
+                <hr>
+                <div class="adding">
+                    <div v-if="!isEditing">
+                        <input class="form-control tam-ctrl" type="text" v-model="todo">
+                        
+                        <button class="btn btn-primary tam-btn-sm tam-btn-primary" type="button"
+                            @click="storeTodo">Toevoegen</button>
+                    </div>
+                    <div v-else>
+                        <input class="form-control tam-ctrl" type="text" v-model="todo">
+                        <button class="btn btn-secondary tam-btn-sm tam-btn-secondary" type="button"
+                            @click="updateTodo">Aanpassen</button>
+                    </div>                 
+                </div>
+                <span v-show="isEmpty">invoerveld is leeg, voer taak in</span>
+                <ul class="ul">
+                    <li v-for="(todo, index) in todos">
+                        {{index + 1}}. {{ todo }}
+                        <svg @click="editTodo(index, todo)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-pencil-fill ico1" viewBox="0 0 16 16">
+                            <path
+                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                        </svg>
+                        <svg @click="removeTodo(index)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-x-circle-fill ico2" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                        </svg>
+                    </li>
+                    <br>
+                    <button v-if="todos.length" class="btn btn-primary tam-btn-sm tam-btn-default" type="button"
+                    @click="cancelTodo">Alles verwijderen</button>
+                </ul>
+                
+            </div>
+            
         </div>
-        <div v-else>
-            <input type="text" v-model="todo">
-            <input type="submit" value="Update" @click="updateTodo">
-        </div>
-
-        <ol>
-            <li v-for="(todo, index) in todos">
-                {{ todo }}
-                <button @click="editTodo(index, todo)">Edit</button>
-                <button @click="removeTodo(index)">Delete</button>
-            </li>
-        </ol>
+        
     </div>
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-    <script>
-        new Vue({
-            el: '#app',
-            
-            data: {
-                isEditing: false,
-                todo: '',
-                todos: [],
-                selectedTodo: null
-            },
-            
-            methods: {
-                storeTodo() {
-                    this.todos.push(this.todo)
-                    this.todo = ''
-                },
-
-                removeTodo(index) {
-                    this.todos.splice(index, 1)
-                },
-
-                updateTodo() {
-                    this.todos.splice(this.selectedIndex, 1, this.todo)
-                    this.todo = ''
-                    this.isEditing = false
-                },
-
-                editTodo(index, todo) {
-                    this.isEditing = true
-                    this.todo = todo
-                    this.selectedIndex = index
-                }
-            }
-        })
-    </script>
+    <script src="app.js"></script>
 </body>
+
 </html>

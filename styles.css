@@ -1,0 +1,150 @@
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif !important;
+    color: #523D6E;
+    background-color:#cacaca;
+    margin: 0px;
+}
+
+/* button */
+
+.tam-btn-primary:hover {
+    background-color: rgba(82, 61, 110, 0.7);
+}
+
+.tam-btn-primary {
+    background-color: #523D6E;
+    color: #FFFFFF !important;
+}
+
+.tam-btn-sm {
+    padding: 0.5em 1.2em !important;
+    font-size: 1rem !important;
+    outline:none;
+}
+
+.tam-btn, .tam-btn-sm {
+    border-radius: 25px !important;
+    border: none;
+    padding: 0.7em 1.6em;
+    cursor: pointer;
+}
+
+.tam-btn-secondary:hover {
+    background-color: rgba(91, 181, 146, 0.7);
+}
+
+.tam-btn-secondary {
+    background-color: #5BB592;
+    text-align: left;
+    font-weight: 700;
+    max-width: 17rem;
+    padding: 0.7em 1em 0.7em 1.6em;
+    color: #FFFFFF !important;
+}
+
+.tam-ctrl, .tam-ctrl-default {
+    border: 1px solid #BAB1C5;
+    border-radius: 10px;
+    height: 31px;
+    font-size: 0.88rem;
+    outline:none;
+    background-color: #E8F0FE;
+    
+}
+
+.tam-head-primary-l {
+    font-size: 25px;
+    font-weight: 700;
+    color: #291D39;
+}
+nav{
+    background-color: #523D6E;
+    margin: none; 
+    padding: none;
+
+}
+
+.ico1{
+    cursor: pointer;
+    color:#555555;
+}
+
+.ico2{
+    cursor: pointer;
+    color: #c90000;
+    
+}
+
+.ico1:hover{
+    cursor: pointer;
+    color:#bbbbbb;
+}
+
+.ico2:hover{
+    cursor: pointer;
+    color: #fd7575;
+    
+}
+
+.logo-image{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    top: 16px;
+    right: 16px;
+    padding-top: 10px;
+    padding-left: 10px; 
+}
+
+ul{
+    color: #291D39;
+    font-size: 25px;
+    padding-inline-start: 10px;
+}
+
+.container{
+    background-color: #FFFFFF;
+    border-radius: 1px;
+    margin: 10% 33%; 
+        
+          
+}
+
+.inner-container{
+    display: flex;
+    justify-content: center;
+       
+}
+
+li {
+    list-style-type: none;
+    padding-right: 10px;
+}
+
+
+element.style {
+    height: 100%;
+    width: 100%;
+}
+
+.adding{
+    display: flex;
+}
+
+.tam-btn-default:hover {
+    color: #291D39;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #D9D4DF;
+    box-shadow: none;
+}
+.tam-btn-default {
+    background-color: #FFFFFF;
+    color: #291D39;
+    box-shadow: 0px 3px 7px rgb(22 22 22 / 20%);
+    max-width: 15rem;
+    border: 1px solid transparent;
+}
+
+span{
+    color: red;
+}
